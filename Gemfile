@@ -63,6 +63,11 @@ gem 'devise'
 gem 'settingslogic'
 gem "slim-rails"
 
+gem 'bootstrap-sass', '~> 3.3.6'
+gem 'active_admin_theme'
+gem 'autoprefixer-rails'
+gem 'compass-rails'
+
 gem 'rails_12factor', group: :production
 
 ruby "2.2.3"
