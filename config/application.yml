@@ -3,9 +3,21 @@ defaults: &defaults
 
 development:
   <<: *defaults
+  social_login:
+    facebook:
+      app_id: 498017087062782
+      app_secret: "c3c3751a02062746b90a57d70b6fd48c"
 
 test:
   <<: *defaults
+  social_login:
+    facebook:
+      app_id: 498017087062782
+      app_secret: "c3c3751a02062746b90a57d70b6fd48c"
 
 production:
   <<: *defaults
+  social_login:
+    facebook:
+      app_id: 498016547062836
+      app_secret: "6e830483818971f7fae2d4506ff20a02"

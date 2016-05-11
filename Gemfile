@@ -68,6 +68,7 @@ gem 'active_admin_theme'
 gem 'autoprefixer-rails'
 gem 'compass-rails'
 gem 'bootstrap_form'
+gem 'omniauth-facebook'
 
 gem 'rails_12factor', group: :production
 
