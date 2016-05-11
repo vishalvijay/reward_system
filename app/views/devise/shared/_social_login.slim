@@ -1,0 +1,4 @@
+hr
+- User::AUTH_PROVIDER.each do |provider|
+  - key = provider == :google_oauth2 ? :google : provider
+  =link_to "Sign in with #{key}", user_omniauth_authorize_path(provider), class: "social-login #{key}"

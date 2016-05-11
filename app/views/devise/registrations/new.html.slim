@@ -11,3 +11,4 @@
           ul.list-inline
             li= f.submit "Sign up"
             li= link_to "Log in", new_session_path(resource_name)
+        = render partial: 'devise/shared/social_login'
