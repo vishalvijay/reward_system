@@ -69,6 +69,7 @@ gem 'autoprefixer-rails'
 gem 'compass-rails'
 gem 'bootstrap_form'
 gem 'omniauth-facebook'
+gem 'omniauth-twitter'
 
 gem 'rails_12factor', group: :production
 
