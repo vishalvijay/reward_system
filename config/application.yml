@@ -7,9 +7,9 @@ development:
     facebook:
       app_id: 498017087062782
       app_secret: "c3c3751a02062746b90a57d70b6fd48c"
-    twitter:
-      app_id: "VlabV7s7myjIbHhncDS79yDRE"
-      app_secret: "G45dGVaeUYYfO2DWvNMLBIPltpFJr3TTdWDnHdBMZ2Sn4yXo0C"
+    google_oauth2:
+      app_id: "975503168236-ms9h9g6kcu2me2v174fp4qtnk87415uu.apps.googleusercontent.com"
+      app_secret: "RFojRo4lTSL026p2ESAon6f2"
 
 test:
   <<: *defaults
@@ -17,9 +17,9 @@ test:
     facebook:
       app_id: 498017087062782
       app_secret: "c3c3751a02062746b90a57d70b6fd48c"
-    twitter:
-      app_id: "VlabV7s7myjIbHhncDS79yDRE"
-      app_secret: "G45dGVaeUYYfO2DWvNMLBIPltpFJr3TTdWDnHdBMZ2Sn4yXo0C"
+    google_oauth2:
+      app_id: "975503168236-ms9h9g6kcu2me2v174fp4qtnk87415uu.apps.googleusercontent.com"
+      app_secret: "RFojRo4lTSL026p2ESAon6f2"
 
 production:
   <<: *defaults
@@ -27,6 +27,6 @@ production:
     facebook:
       app_id: 498016547062836
       app_secret: "6e830483818971f7fae2d4506ff20a02"
-    twitter:
-      app_id: "3w6tmpWnlTRNawq0VqYTo3n1x"
-      app_secret: "e1xso5EnLC8L3yxoeROANMNn8RCllhpc8FtvjdsqudpVTfb0eH"
+    google_oauth2:
+      app_id: "482921821334-soo04j2ogvh3fh39qr58nb042tj7c1j7.apps.googleusercontent.com"
+      app_secret: "0LYp1LLmeokl6BmxN-TYhfwr"

@@ -2,7 +2,7 @@ class User < ActiveRecord::Base
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
 
-  AUTH_PROVIDER = [:facebook, :twitter]
+  AUTH_PROVIDER = [:facebook, :google_oauth2]
 
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable, :omniauthable, omniauth_providers: AUTH_PROVIDER
