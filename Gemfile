@@ -62,3 +62,7 @@ gem 'activeadmin', github: 'activeadmin'
 gem 'devise'
 gem 'settingslogic'
 gem "slim-rails"
+
+gem 'rails_12factor', group: :production
+
+ruby "2.2.3"
