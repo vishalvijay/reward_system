@@ -37,6 +37,7 @@ group :development, :test do
   gem 'byebug'
 end
 
+
 group :development do
   # Access an IRB console on exception pages or by using <%= console %> in views
   gem 'web-console', '~> 2.0'
@@ -45,3 +46,18 @@ group :development do
   gem 'spring'
 end
 
+group :development, :test do
+  gem "rspec-rails", "~> 3.4.2"
+  gem "factory_girl_rails", "~> 4.7.0"
+  gem 'guard-rspec', '~> 4.6.5'
+  gem 'spring-commands-rspec', '~> 1.0.4'
+end
+
+group :test do
+  gem "faker", "~> 1.6.3"
+  gem "database_cleaner", "~> 1.5.3"
+end
+
+gem 'activeadmin', github: 'activeadmin'
+gem 'devise'
+gem 'settingslogic'
