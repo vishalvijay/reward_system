@@ -67,6 +67,7 @@ gem 'bootstrap-sass', '~> 3.3.6'
 gem 'active_admin_theme'
 gem 'autoprefixer-rails'
 gem 'compass-rails'
+gem 'bootstrap_form'
 
 gem 'rails_12factor', group: :production
 

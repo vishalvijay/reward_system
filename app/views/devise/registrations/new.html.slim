@@ -1,0 +1,13 @@
+.row
+  .col-md-6.col-md-offset-3
+    .panel.panel-default
+      .panel-heading Sign up
+      .panel-body
+        = bootstrap_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+          = f.text_field :name, autofocus: true
+          = f.email_field :email
+          = f.password_field :password, autocomplete: "off"
+          = f.password_field :password_confirmation, autocomplete: "off"
+          ul.list-inline
+            li= f.submit "Sign up"
+            li= link_to "Log in", new_session_path(resource_name)
