@@ -28,9 +28,20 @@ class User < ActiveRecord::Base
     super({methods: [:points]}.merge(options))
   end
 
-  def redeem user
+  def redeem reward
     error = nil
-    error = "You don't have enouph points to redeem this coupon"
+    if reward
+      if self.points >= reward.points
+        coupon = Coupon.create(user: self, reward: reward, expires_at: (DateTime.now + 1.month), points: reward.points)
+        unless coupon.valid?
+          error = coupon.errors.full_messages
+        end
+      else
+        error = "You don't have enouph points to redeem this coupon"
+      end
+    else
+      error = "Reward can't be nil"
+    end
     error
   end
 end

@@ -16,7 +16,7 @@ class MainController < ApplicationController
     reward = Reward.find(params[:reward_id])
     result = current_user.redeem(reward)
     respond_to do |format|
-      unless reward
+      unless result
         format.html { redirect_to :back, notice: "#{reward.name} coupon is successfully redeemed, checkout your profile more for details" }
         format.json {render json: {message: "#{reward.name} coupon is successfully redeemed"}}
       else
