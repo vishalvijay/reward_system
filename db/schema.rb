@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160512080551) do
+ActiveRecord::Schema.define(version: 20160512151236) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -48,6 +48,21 @@ ActiveRecord::Schema.define(version: 20160512080551) do
 
   add_index "admin_users", ["email"], name: "index_admin_users_on_email", unique: true, using: :btree
   add_index "admin_users", ["reset_password_token"], name: "index_admin_users_on_reset_password_token", unique: true, using: :btree
+
+  create_table "coupons", force: :cascade do |t|
+    t.integer  "user_id",    null: false
+    t.integer  "reward_id",  null: false
+    t.datetime "expires_at", null: false
+    t.integer  "points",     null: false
+    t.string   "code",       null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "coupons", ["code"], name: "index_coupons_on_code", unique: true, using: :btree
+  add_index "coupons", ["expires_at"], name: "index_coupons_on_expires_at", using: :btree
+  add_index "coupons", ["reward_id"], name: "index_coupons_on_reward_id", using: :btree
+  add_index "coupons", ["user_id"], name: "index_coupons_on_user_id", using: :btree
 
   create_table "reward_point_transactions", force: :cascade do |t|
     t.string   "title",      null: false
@@ -91,5 +106,7 @@ ActiveRecord::Schema.define(version: 20160512080551) do
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
+  add_foreign_key "coupons", "rewards"
+  add_foreign_key "coupons", "users"
   add_foreign_key "reward_point_transactions", "users"
 end

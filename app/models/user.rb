@@ -9,6 +9,7 @@ class User < ActiveRecord::Base
   validates_presence_of :name
 
   has_many :reward_point_transactions, -> { order 'created_at desc' }
+  has_many :coupons, -> { order 'created_at desc' }
 
   def self.from_omniauth(auth)
     where(email: auth.info.email).first_or_create do |user|

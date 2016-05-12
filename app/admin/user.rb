@@ -4,6 +4,7 @@ ActiveAdmin.register User do
   sidebar "Options", only: [:show, :edit] do
     ul do
       li link_to "Reward point transactions", admin_user_reward_point_transactions_path(user)
+      li link_to "Redeemed coupons", admin_user_coupons_path(user)
     end
   end
 
