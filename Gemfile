@@ -72,6 +72,8 @@ gem 'bootstrap_form'
 gem 'omniauth-facebook'
 gem "omniauth-google-oauth2"
 gem 'sunspot_rails'
+gem 'kaminari'
+gem 'bootstrap-kaminari-views'
 
 gem 'rails_12factor', group: :production
 

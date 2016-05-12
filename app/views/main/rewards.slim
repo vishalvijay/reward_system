@@ -1,1 +1,17 @@
-Yo yo
+.row.rewards
+  .col-md-3= render partial: 'main/profile'
+  .col-md-9
+    .row
+      - @rewards.each do |r|
+        .col-md-3
+          .panel.panel-default.reward
+            .branding style=("background: #{r.background_color}; color: #{r.font_color};") title=(r.description)
+              =r.name
+            .info
+              .points="#{r.points}pts"
+              - if r.points <= current_user.points
+                = link_to "Redeem", redeem_reward_path(reward_id: r.id), method: :post, data: {confirm: "Are you sure, click ok to confirm?"} , class: "btn btn-default btn-sm"
+              - else
+                a.btn.btn-default.btn-sm disabled="disabled" title="You don't have enough points to redeem this coupon" Redeem
+    .pull-right
+      = paginate @rewards, :theme => 'twitter-bootstrap-3'
