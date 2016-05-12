@@ -2,6 +2,7 @@ class MainController < ApplicationController
   before_action :authenticate_user!
 
   def index
+    @coupons = current_user.coupons.includes(:reward)
   end
 
   def rewards

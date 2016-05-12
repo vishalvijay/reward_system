@@ -15,4 +15,15 @@
             p
               | You don't have enough points in your account. Please ask admin to relese some points. Later you can unlock millions of coupon and voucher gallery
         = render partial: 'main/reward_point_transactions'
-  .col-md-4
+  .col-md-3
+    .panel.panel-default
+      .panel-heading My Coupons
+      ul.list-group
+        - @coupons.each do |c|
+          li.list-group-item.coupons
+            .branding style=("background: #{c.reward.background_color}; color: #{c.reward.font_color};")
+              =c.reward.name
+            span.badge =c.code
+            span.badge ="#{c.points} pts"
+            br
+            .small.pull-right ="Use by #{c.expires_at.to_date}"
