@@ -5,5 +5,8 @@ class Reward < ActiveRecord::Base
   searchable do
     text :name
     text :description
+    integer :points
   end
+
 end
+
