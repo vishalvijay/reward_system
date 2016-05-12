@@ -6,7 +6,8 @@ class MainController < ApplicationController
   end
 
   def rewards
-    @rewards = Reward.page(params[:page] || 1).per(16)
+    @page = params[:page] || 1
+    @rewards = Reward.page(@page).per(16)
     respond_to do |format|
       format.html
       format.json {render json: @rewards}
