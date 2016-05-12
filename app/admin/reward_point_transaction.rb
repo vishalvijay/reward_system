@@ -1,7 +1,6 @@
 ActiveAdmin.register RewardPointTransaction do
   belongs_to :user
   permit_params :title, :points, :user_id
-  actions :all, except: [:destroy]
 
   filter :title
   filter :points
