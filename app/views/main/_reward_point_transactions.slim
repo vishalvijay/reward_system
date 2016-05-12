@@ -1,0 +1,13 @@
+- if current_user.reward_point_transactions.count > 0
+  hr
+  h4 Reward point transactions
+  table.table
+    tr
+      td #
+      td Title
+      td Points
+    - current_user.reward_point_transactions.each do |rpt|
+      tr class=(rpt.points > 0 ? "success" : "danger")
+        td="##{rpt.id}"
+        td="#{rpt.title}"
+        td="#{rpt.points}"

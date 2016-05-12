@@ -8,7 +8,7 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable, :omniauthable, omniauth_providers: AUTH_PROVIDER
   validates_presence_of :name
 
-  has_many :reward_point_transactions
+  has_many :reward_point_transactions, -> { order 'created_at desc' }
 
   def self.from_omniauth(auth)
     where(email: auth.info.email).first_or_create do |user|

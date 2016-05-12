@@ -9,7 +9,8 @@ html lang="en"
     = csrf_meta_tags
   body
     head= render partial: 'layouts/navbar'
-    .container
-      = yield
+    .main-container
+      .container-fluid
+        = yield
     head= render partial: 'layouts/footer'
 

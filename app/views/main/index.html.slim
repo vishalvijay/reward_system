@@ -1,1 +1,19 @@
-h2 Hello World
+.row
+  .col-md-3= render partial: 'main/profile'
+  .col-md-6
+    .panel.panel-default
+      .panel-body
+        .jumbotron
+          h1="Hello, #{current_user.name.split(" ")[0]}..."
+          - if current_user.points > 0
+            p
+              | You have&nbsp;
+              strong= current_user.points
+              | &nbsp;points in your account. Redeem it fast and get shopping vouchers, coupons and etc.
+            p
+              a.btn.btn-primary.btn-lg href="#" role="button" Redeem it now
+          - else
+            p
+              | You don't have enough points in your account. Please ask admin to relese some points. Later you can unlock millions of coupon and voucher gallery
+        = render partial: 'main/reward_point_transactions'
+  .col-md-4
