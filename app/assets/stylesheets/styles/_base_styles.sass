@@ -30,3 +30,11 @@ body
 .main-container
   margin-top: $grid-gutter-width/2
   margin-bottom: $grid-gutter-width/2
+.flash-message-block
+  position: absolute
+  z-index: 1000
+  width: 100%
+  padding: 10px
+  +respond-to(desk)
+    width: 50%
+    left: 25%

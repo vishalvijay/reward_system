@@ -1,0 +1,27 @@
+- if flash[:success].present? || flash[:warn].present? || flash[:error].present? || flash[:alert].present? || flash[:notice].present?
+  #flash-messages.flash-message-block
+    - if flash[:success].present?
+      .alert.alert-success.text-center
+        button.close aria-hidden="true" data-dismiss="alert" type="button"
+          = "&times;".html_safe
+        = error_messages(flash[:success])
+    - if flash[:warn].present?
+      .alert.alert-warning.alert-dismissable.text-center
+        button.close aria-hidden="true" data-dismiss="alert" type="button"
+          = "&times;".html_safe
+        = error_messages(flash[:warn])
+    - if flash[:error].present?
+      .alert.alert-danger.alert-dismissable.text-center
+        button.close aria-hidden="true" data-dismiss="alert" type="button"
+          = "&times;".html_safe
+        = error_messages(flash[:error])
+    - if flash[:alert].present?
+      .alert.alert-info.alert-dismissable.text-center
+        button.close aria-hidden="true" data-dismiss="alert" type="button"
+          = "&times;".html_safe
+        = error_messages(flash[:alert])
+    - if flash[:notice].present?
+      .alert.alert-info.alert-dismissable.text-center
+        button.close aria-hidden="true" data-dismiss="alert" type="button"
+          = "&times;".html_safe
+        = error_messages(flash[:notice])

@@ -8,9 +8,10 @@ html lang="en"
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
     = csrf_meta_tags
   body
-    head= render partial: 'layouts/navbar'
+    = render partial: 'layouts/flash_messages'
+    = render partial: 'layouts/navbar'
     .main-container
       .container-fluid
         = yield
-    head= render partial: 'layouts/footer'
+    = render partial: 'layouts/footer'
 

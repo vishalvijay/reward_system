@@ -1,6 +1,6 @@
 ActiveAdmin.register RewardPointTransaction do
   belongs_to :user
-  permit_params :title, :points, :user_id
+  permit_params :title, :points, :user_id, :coupon_id
 
   filter :title
   filter :points
@@ -12,6 +12,7 @@ ActiveAdmin.register RewardPointTransaction do
       f.input :user_id, as: :hidden
       f.input :title
       f.input :points
+      f.input :coupon_id
     end
     f.actions
   end
