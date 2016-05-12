@@ -27,4 +27,10 @@ class User < ActiveRecord::Base
   def as_json(options = { })
     super({methods: [:points]}.merge(options))
   end
+
+  def redeem user
+    error = nil
+    error = "You don't have enouph points to redeem this coupon"
+    error
+  end
 end
