@@ -8,6 +8,8 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable, :omniauthable, omniauth_providers: AUTH_PROVIDER
   validates_presence_of :name
 
+  has_many :reward_point_transactions
+
   def self.from_omniauth(auth)
     where(email: auth.info.email).first_or_create do |user|
       user.email = auth.info.email
@@ -15,5 +17,9 @@ class User < ActiveRecord::Base
       user.name = auth.info.name
       user.image_url = auth.info.image
     end
+  end
+
+  def points
+    reward_point_transactions.sum :points
   end
 end
