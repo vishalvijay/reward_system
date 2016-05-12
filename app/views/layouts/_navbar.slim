@@ -6,16 +6,13 @@ nav.navbar.navbar-default
         span.icon-bar
         span.icon-bar
         span.icon-bar
-      a.navbar-brand href="/" Reward System
+      =link_to("Reward System", root_path, class: "navbar-brand")
     - if current_user
       #bs-example-navbar-collapse-1.collapse.navbar-collapse
         ul.nav.navbar-nav
-          li.active
-            a href="/"
-              | Account
-              span.sr-only (current)
-          li
-            a href="#" Buy rewards
+          li class=(active_class_name(root_path))
+            =link_to("Account", root_path)
+          li class=(active_class_name(rewards_path))
+            =link_to("Buy rewards", rewards_path)
         ul.nav.navbar-nav.navbar-right
-          li
-            = link_to "Sign out", destroy_user_session_path, :method => :delete
+          li= link_to "Sign out", destroy_user_session_path, method: :delete

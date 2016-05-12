@@ -10,8 +10,7 @@
               | You have&nbsp;
               strong= current_user.points
               | &nbsp;points in your account. Redeem it fast and get shopping vouchers, coupons and etc.
-            p
-              a.btn.btn-primary.btn-lg href="#" role="button" Redeem it now
+            p=link_to("Redeem it now", rewards_path, class: "btn btn-primary btn-lg")
           - else
             p
               | You don't have enough points in your account. Please ask admin to relese some points. Later you can unlock millions of coupon and voucher gallery
