@@ -7,7 +7,18 @@ class MainController < ApplicationController
 
   def rewards
     @page = params[:page] || 1
-    @rewards = Reward.page(@page).per(16)
+    @query = params[:query]
+    @rewards = if @query.blank?
+      Reward.page(@page).per(16)
+    else
+      Sunspot.search(Reward) do
+        fulltext("\"#{@query}\"^5 OR #{@query}~1") do
+          fields(name: 5)
+          phrase_fields(name: 5)
+        end
+        paginate page: @page, per_page: 16
+      end.results
+    end
     respond_to do |format|
       format.html
       format.json {render json: @rewards}
