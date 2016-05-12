@@ -22,4 +22,8 @@ class User < ActiveRecord::Base
   def points
     reward_point_transactions.sum :points
   end
+
+  def as_json(options = { })
+    super({methods: [:points]}.merge(options))
+  end
 end

@@ -64,6 +64,7 @@ ActiveRecord::Schema.define(version: 20160512080551) do
     t.integer  "points",           null: false
     t.string   "background_color", null: false
     t.string   "font_color",       null: false
+    t.text     "description"
     t.datetime "created_at",       null: false
     t.datetime "updated_at",       null: false
   end

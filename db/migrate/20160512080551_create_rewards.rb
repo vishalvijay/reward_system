@@ -5,6 +5,7 @@ class CreateRewards < ActiveRecord::Migration
       t.integer :points, null: false
       t.string :background_color, null: false
       t.string :font_color, null: false
+      t.text :description
 
       t.timestamps null: false
     end

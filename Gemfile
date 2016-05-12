@@ -44,6 +44,7 @@ group :development do
 
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
+  gem 'sunspot_solr'
 end
 
 group :development, :test do
@@ -70,6 +71,7 @@ gem 'compass-rails'
 gem 'bootstrap_form'
 gem 'omniauth-facebook'
 gem "omniauth-google-oauth2"
+gem 'sunspot_rails'
 
 gem 'rails_12factor', group: :production
 
