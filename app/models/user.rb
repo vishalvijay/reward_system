@@ -44,4 +44,9 @@ class User < ActiveRecord::Base
     end
     error
   end
+
+  def image_url
+    img_url = read_attribute(:image_url)
+    img_url.present? ? img_url : "https://lh3.googleusercontent.com/-XdUIqdMkCWA/AAAAAAAAAAI/AAAAAAAAAAA/4252rscbv5M/w200-h200/photo.jpg"
+  end
 end
