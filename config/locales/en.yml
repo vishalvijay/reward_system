@@ -20,4 +20,6 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  user_redeem_errors:
+    nil_reward: "Reward can't be nil"
+    not_enough_points: "You don't have enouph points to redeem this coupon"

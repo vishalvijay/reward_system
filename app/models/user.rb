@@ -37,10 +37,10 @@ class User < ActiveRecord::Base
           error = coupon.errors.full_messages
         end
       else
-        error = "You don't have enouph points to redeem this coupon"
+        error = I18n.t("user_redeem_errors.not_enough_points")
       end
     else
-      error = "Reward can't be nil"
+      error = I18n.t("user_redeem_errors.nil_reward")
     end
     error
   end
