@@ -1,5 +1,6 @@
 class MainController < ApplicationController
   before_action :authenticate_user!
+  PER_PAGE = 16
 
   def index
     @coupons = current_user.coupons.includes(:reward)
@@ -9,7 +10,7 @@ class MainController < ApplicationController
     @page = params[:page] || 1
     @query = params[:query]
     @rewards = if @query.blank?
-      Reward.page(@page).per(16)
+      Reward.page(@page).per(PER_PAGE)
     else
       q = @query
       p = @page
@@ -17,7 +18,7 @@ class MainController < ApplicationController
         fulltext("\"#{q}\"^5 OR #{q}~1") do
           boost_fields name: 2.0
         end
-        paginate page: p, per_page: 16
+        paginate page: p, per_page: PER_PAGE
       end.results
     end
     respond_to do |format|
