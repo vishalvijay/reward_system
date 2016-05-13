@@ -1,7 +1,7 @@
 #module for helping controller specs
 module ValidUserHelper
-  def signed_in_as_a_valid_user
-    @user ||= FactoryGirl.create :user
+  def signed_in_as_a_valid_user new_user = nil
+    @user ||= (new_user || FactoryGirl.create(:user))
     sign_in @user # method from devise:TestHelpers
   end
 end
@@ -10,8 +10,8 @@ end
 module ValidUserRequestHelper
 
   # for use in request specs
-  def sign_in_as_a_valid_user
-    @user ||= FactoryGirl.create :user
+  def sign_in_as_a_valid_user new_user = nil
+    @user ||= (new_user || FactoryGirl.create(:user))
     post_via_redirect user_session_path, 'user[email]' => @user.email, 'user[password]' => @user.password
   end
 end
