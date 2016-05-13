@@ -1,9 +1,9 @@
+require 'faker'
 FactoryGirl.define do
   factory :coupon do
-    user nil
-    reward nil
-    expires_at "2016-05-12 20:42:36"
-    points 1
-    code "MyString"
+    association :user
+    association :reward
+    expires_at 1.month.from_now
+    points { reward.points }
   end
 end

@@ -57,6 +57,7 @@ end
 group :test do
   gem "faker", "~> 1.6.3"
   gem "database_cleaner", "~> 1.5.3"
+  gem 'shoulda-matchers'
 end
 
 gem 'activeadmin', github: 'activeadmin'
