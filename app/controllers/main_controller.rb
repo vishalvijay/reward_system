@@ -11,10 +11,10 @@ class MainController < ApplicationController
     @rewards = if @query.blank?
       Reward.page(@page).per(16)
     else
+      q = @query
       Sunspot.search(Reward) do
-        fulltext("\"#{@query}\"^5 OR #{@query}~1") do
-          fields(name: 5)
-          phrase_fields(name: 5)
+        fulltext("\"#{q}\"^5 OR #{q}~1") do
+          boost_fields name: 2.0
         end
         paginate page: @page, per_page: 16
       end.results
