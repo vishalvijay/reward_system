@@ -1,5 +1,5 @@
 ActiveAdmin.register Reward do
-  permit_params :name, :points, :background_color, :font_color
+  permit_params :name, :points, :background_color, :font_color, :description
 
   index do
     selectable_column

@@ -1,4 +1,4 @@
-task seed_rewrds: :environment do
+task seed_rewards: :environment do
   fixed_points = [200, 300, 150, 500, 100, 1000]
   reward_brands = [
     {
