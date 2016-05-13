@@ -1,5 +1,6 @@
 class OmniauthCallbacksController < Devise::OmniauthCallbacksController
 
+  #Dynamic handling of all provider. No need to declare different method for each provider
   def action_missing(name)
     if User::AUTH_PROVIDER.include?(name.to_sym)
       @user = User.from_omniauth(request.env["omniauth.auth"])
