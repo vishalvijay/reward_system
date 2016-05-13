@@ -1,6 +1,6 @@
 production:
   solr:
-    hostname: docean-us-ny-solr-5-1.opensolr.com
+    hostname: aws-virginia-solr4-10.opensolr.com
     port: 443
     path: /solr/reward_system
     log_level: WARNING
