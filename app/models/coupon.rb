@@ -9,6 +9,7 @@ class Coupon < ActiveRecord::Base
   before_validation do
     self.code = self.class.new_code if self.code.blank?
     unless reward_point_transaction
+      #Add -ve transaction to user
       self.reward_point_transaction = RewardPointTransaction.new(user: user, title: "Redeemed #{self.points} points for #{reward.name} coupon", points: -self.points)
     end
   end

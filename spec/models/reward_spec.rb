@@ -9,4 +9,5 @@ RSpec.describe Reward, type: :model do
   it { is_expected.to validate_presence_of :points }
   it { is_expected.to validate_presence_of :background_color }
   it { is_expected.to validate_presence_of :font_color }
+  it { should have_many(:coupons) }
 end
