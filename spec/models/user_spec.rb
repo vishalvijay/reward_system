@@ -6,8 +6,10 @@ RSpec.describe User, type: :model do
     expect(build(:user)).to be_valid
   end
 
-  #All other fields will be validated by devise, so we no need test it
-  it { is_expected.to validate_presence_of :name }
+  describe "validations" do
+    #All other fields will be validated by devise, so we no need test it
+    it { is_expected.to validate_presence_of :name }
+  end
 
   context "reward_point_transactions" do
     it { should have_many(:reward_point_transactions) }
