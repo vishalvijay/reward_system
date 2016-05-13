@@ -1,3 +1,4 @@
+require "object_benchmark"
 class MainController < ApplicationController
   before_action :authenticate_user!
   PER_PAGE = 16
@@ -31,7 +32,7 @@ class MainController < ApplicationController
     respond_to do |format|
       if params[:reward_id].present?
         reward = Reward.find(params[:reward_id])
-        result = current_user.redeem(reward)
+        result = ObjectBenchmark.new(current_user).redeem(reward)
         unless result
           format.html { redirect_to_back(default: rewards_path, notice: "#{reward.name} coupon is successfully redeemed, checkout your profile more for details")}
           format.json {render json: {message: "#{reward.name} coupon is successfully redeemed"}}
