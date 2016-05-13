@@ -1,8 +1,11 @@
 #module for helping controller specs
 module ValidUserHelper
   def signed_in_as_a_valid_user new_user = nil
-    @user ||= (new_user || FactoryGirl.create(:user))
-    sign_in @user # method from devise:TestHelpers
+    before(:each) do
+      @request.env["devise.mapping"] = Devise.mappings[:user]
+      @user ||= (new_user || FactoryGirl.create(:user))
+      sign_in @user # method from devise:TestHelpers
+    end
   end
 end
 
